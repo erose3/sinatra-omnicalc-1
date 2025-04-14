@@ -2,9 +2,10 @@
 Square Results
 </h1>
 
-<p> Number </p>
-<p> <%= params.fetch("number").to_i%> </p>
-<p> Square </p>
-<p> <%= params.fetch("number").to_i * params.fetch("number").to_i %> </p>
-<p> </p>
+<d1>
+<dt> Number </dt>
+<dd> <%= @the_num %> </dd>
+<dt> Square </dt>
+<dd> <%= @the_result %> </dd>
+</d1>
 <p> <a href = "/square/new" >Calculate another square</a>
