@@ -32,3 +32,19 @@ get("/square_root/results") do
 
   erb(:square_root_results)
 end
+
+get("/payment/new") do
+  erb(:payment)
+end
+
+get("/payment/results") do
+  @APR = params.fetch("APR").to_f
+  @monthly_APR = (@APR/100/12)
+  @years = params.fetch("years").to_f
+  @months = @years * 12
+  @prin = params.fetch("principal").to_f
+
+  @pmt = (@monthly_APR*@prin) / (1-((1+@monthly_APR)**-@months))
+
+  erb(:payment_results)
+end
